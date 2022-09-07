@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header container">
+    <h1 class="header__headline">todos.</h1>
+  </header>
+  <main class="todos container" id="root">
+    <ul class="todos__sort-list">
+      <li class="todos__sort-list-item">
+        <button class="todos__sort-btn" id="sort-all">Все</button>
+      </li>
+      <li class="todos__sort-list-item">
+        <button class="todos__sort-btn" id="sort-active">Активные</button>
+      </li>
+      <li class="todos__sort-list-item">
+        <button class="todos__sort-btn" id="sort-completed">Завершенные</button>
+      </li>
+    </ul>
+    <input class="todos__main-input" placeholder="Что должно быть сделано?">
+    <ul class="todos__list">
+    </ul>
+    <button class="todos__clear-btn" id="clear">Очистить завершенные</button>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

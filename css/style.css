@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.visuallyhidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.header {
+    margin-top: 60px;
+    margin-bottom: -22px;
+}
+
+.header__headline {
+    margin: 0;
+    text-align: right;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.todos__sort-list {
+    display: flex;
+    margin: 0 0 14px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.todos__sort-list-item:first-child {
+    margin-left: 20px;
+}
+
+.todos__sort-list-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.todos__sort-btn {
+    position: relative;
+    display: block;
+    padding-bottom: 3px;
+    font-size: 16px;
+    line-height: 14px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.todos__sort-btn::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: #000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.todos__sort-btn:hover::after,
+.todos__sort-btn:focus::after,
+.todos__sort-btn--active::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.todos__main-input {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 30px;
+    line-height: 30px;
+    border: 1px solid #000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    outline: none;
+}
+
+.todos__list {
+    list-style: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+.todos__list-item {
+    position: relative;
+    border: 1px solid #000;
+    border-top: none;
+    overflow: hidden;
+}
+
+.todos__list-item:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.todos__checkbox-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
+.todos__checkbox-label::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: block;
+    width: 19px;
+    height: 19px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.todos__checkbox-label::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    display: none;
+    width: 18px;
+    height: 13px;
+    background-image: url(../icons/check.svg);
+    background-repeat: no-repeat;
+}
+
+.todos__checkbox:checked~.todos__checkbox-label::after {
+    display: block;
+}
+
+.todos__checkbox:checked~.todos__task-input {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: line-through;
+}
+
+.todos__task-input {
+    width: 100%;
+    padding: 10px 43px 10px 44px;
+    font-size: 20px;
+    line-height: 20px;
+    border: none;
+    outline: none;
+}
+
+.todos__delete-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 43px;
+    height: 43px;
+    opacity: 0;
+    background-color: transparent;
+    background-image: url(../icons/delete.svg);
+    background-position: right 10px top 10px;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.todos__list-item:hover .todos__delete-btn,
+.todos__delete-btn:focus {
+    opacity: 1;
+}
+
+
+.todos__clear-btn {
+    position: relative;
+    align-self: flex-end;
+    margin: 0 10px 0 0;
+    padding-bottom: 3px;
+    font-size: 16px;
+    line-height: 14px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.todos__clear-btn::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: #000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.todos__clear-btn:hover::after,
+.todos__clear-btn:focus::after {
+    width: 100%;
+    left: 0;
+}
